@@ -2,7 +2,7 @@
 
 Copilot Studio 의 **세 가지 하네스(Standard · GitHub Copilot · Copilot chat)** 로 같은 GitHub 이슈 분류 에이전트를 **포털 클릭 없이 코드만으로** 만들고, Microsoft 365 Agents SDK 테스트 하네스로 같은 5개 케이스를 검증하는 실습입니다. 모든 단계는 `caldova10993123.onmicrosoft.com` / **Caldova (default)** 환경 / Azure 구독 `e56daab3-…` 에서 2026-10-17 에 실제로 실행했습니다.
 
-* **본문**: [`GUIDE.ko.md`](GUIDE.ko.md) (또는 단일 파일 [`GUIDE.ko.html`](GUIDE.ko.html))
+* **본문**: [`GUIDE.ko.md`](GUIDE.ko.md) (또는 단일 파일 [`GUIDE.ko.html`](https://junwoojeong100.github.io/copilot-studio-harness-as-code/))
 * **검증 기록**: [`VERIFICATION_REPORT.md`](VERIFICATION_REPORT.md), `evidence/`
 
 ## GitHub Pages 자동 배포
