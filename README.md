@@ -5,6 +5,14 @@ Copilot Studio 의 **세 가지 하네스(Standard · GitHub Copilot · Copilot 
 * **본문**: [`GUIDE.ko.md`](GUIDE.ko.md) (또는 단일 파일 [`GUIDE.ko.html`](GUIDE.ko.html))
 * **검증 기록**: [`VERIFICATION_REPORT.md`](VERIFICATION_REPORT.md), `evidence/`
 
+## GitHub Pages 자동 배포
+
+Pages를 활성화하면 `main`에 푸시할 때마다 [`deploy-pages.yml`](.github/workflows/deploy-pages.yml)이 `GUIDE.ko.html`을 사이트 첫 화면(`index.html`)으로 배포합니다. HTML만 배포하며, 가이드 안의 상대 문서 링크는 해당 커밋의 GitHub 파일로 연결합니다. Actions에서 수동 실행도 가능합니다.
+
+게시 소스는 **Settings → Pages → Build and deployment → Source: GitHub Actions**입니다. Pages 사이트와 이 리포지토리는 공개됩니다.
+
+**배포 주소**: <https://junwoojeong100.github.io/copilot-studio-harness-as-code/>
+
 ## 결과 한눈에
 
 | 하네스 · 옵션 | 코드 | 호출/확인 | 결과 |
