@@ -1,0 +1,18 @@
+# 하네스별 테스트 대상. schema 는 pac copilot init 이 만든 에이전트 schemaName.
+targets:
+  standard-classic:      # Standard harness - classic orchestration (topic + Power Fx, 결정론적)
+    schema: hlab_IssueTriageStandard
+    runtime: published
+    driver: dialog
+  standard-generative:   # Standard harness - generative orchestration (instructions 기반)
+    schema: hlab_IssueTriageStdGen
+    runtime: published
+    driver: single
+  github:                # GitHub Copilot harness (CliCopilot, skills/knowledge/tools)
+    schema: hlab_IssueTriageGitHub
+    runtime: agentic3p
+    driver: single
+  github-mcp:            # GitHub Copilot harness + MCP 도구 (커스텀 커넥터 -> Azure Container Apps MCP 서버)
+    schema: hlab_IssueTriageMCP
+    runtime: agentic3p
+    driver: single

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.22/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.22",
+  "version": "1.0.1",
+  "id": "4e705395-d1c8-47ea-9d7c-d38b2caf6a2f",
+  "developer": {
+    "name": "Caldova Harness Lab",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/servicesagreement"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Issue Triage Copilot",
+    "full": "Issue Triage Copilot (Caldova harness lab)"
+  },
+  "description": {
+    "short": "GitHub 이슈를 라벨 정책으로 분류하는 Copilot 에이전트",
+    "full": "Copilot chat harness 실습용 선언형 에이전트입니다. 이슈 제목·본문을 받아 category, priority, team, summary, needsHumanReview 를 JSON 으로 답합니다."
+  },
+  "accentColor": "#005FB8",
+  "copilotAgents": {
+    "declarativeAgents": [
+      {
+        "id": "issueTriageCopilot",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  },
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": []
+}

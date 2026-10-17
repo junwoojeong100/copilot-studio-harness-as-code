@@ -1,0 +1,3 @@
+connectionReferences:
+  - connectionReferenceLogicalName: hlab_IssueTriageMCP.cr.shared_new-5fissue-20triage-20mcp-5f5425e841e7aedf00.beff778c04334e68b1faa1384bf8ce89
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_new-5fissue-20triage-20mcp-5f5425e841e7aedf00

@@ -1,0 +1,30 @@
+# az containerapp logs show -n ca-csharness-mcp -g rg-csharness-lab --tail 300 --format text  (read-only; IP 마스킹, healthz/Terminating 줄 제거)
+# 04:3xZ = 13:3x KST.  13:32:4x~13:33:4x KST = 스크립트 재실행 테스트(채팅 1 + 케이스 5) / 13:35:12 KST = 잘못된 키 음성 테스트
+2026-10-17T04:35:41.30964  Connecting to the container 'mcp'...
+2026-10-17T04:35:41.43268  Successfully Connected to container: 'mcp' [Revision: 'ca-csharness-mcp--0000002', Replica: 'ca-csharness-mcp--0000002-67d8df85c7-tn42x']
+2026-10-17T04:32:52.9027137Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:32:53.0990404Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-17T04:32:53.9275216Z stderr F Processing request of type CallToolRequest
+2026-10-17T04:32:53.9280236Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:03.2938481Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:04.3284757Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-17T04:33:05.2357721Z stderr F Processing request of type CallToolRequest
+2026-10-17T04:33:05.2362955Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:13.8424896Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:14.7201181Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-17T04:33:14.9267634Z stderr F Processing request of type CallToolRequest
+2026-10-17T04:33:14.9272407Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:23.1489483Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:23.4384832Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-17T04:33:23.6418636Z stderr F Processing request of type CallToolRequest
+2026-10-17T04:33:23.6425939Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:31.4536478Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:31.6489015Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-17T04:33:31.8476592Z stderr F Processing request of type CallToolRequest
+2026-10-17T04:33:31.8482514Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:40.0884096Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:33:40.2818863Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-17T04:33:41.6975854Z stderr F Processing request of type CallToolRequest
+2026-10-17T04:33:41.6980800Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-17T04:35:12.1149876Z stdout F INFO:     x.x.x.x:0 - "POST /mcp HTTP/1.1" 401 Unauthorized
+2026-10-17T04:35:37.6200579Z stdout F INFO:     x.x.x.x:0 - "GET / HTTP/1.1" 401 Unauthorized

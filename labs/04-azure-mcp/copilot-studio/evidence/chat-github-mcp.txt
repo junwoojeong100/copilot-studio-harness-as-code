@@ -1,0 +1,13 @@
+봇(시작) > Hello! I'm Issue Triage MCP. How can I help you today?
+나       > Classify this GitHub issue. Reply with one JSON object using exactly the keys category, priority, team, summary, needsHumanReview.
+Title: Checkout API returns 503 for all customers
+Body: Started after the latest deployment. No workaround is available.
+  [step]   Calling Classify GitHub issue...
+  [step]   Classify GitHub issue completed
+  [thought] me classify
+  [thought] this issue
+  [thought] using
+  [thought] the classify
+  [thought] _issue tool.
+  [thought] Let me classify this issue using the classify_issue tool.
+봇       > {"category":"bug","priority":"P0","team":"backend","summary":"bug for backend: Checkout API returns 503 for all customers","needsHumanReview":true}

@@ -1,0 +1,77 @@
+{
+  "target": "github",
+  "schema": "hlab_IssueTriageGitHub",
+  "passed": 5,
+  "total": 5,
+  "results": [
+    {
+      "id": "production-outage",
+      "passed": true,
+      "problems": [],
+      "parsed": {
+        "category": "bug",
+        "priority": "P0",
+        "team": "backend",
+        "summary": "Checkout API outage returning 503 for all customers after deployment with no workaround",
+        "needsHumanReview": true
+      },
+      "seconds": 5.5,
+      "reply": "{\"category\": \"bug\", \"priority\": \"P0\", \"team\": \"backend\", \"summary\": \"Checkout API outage returning 503 for all customers after deployment with no workaround\", \"needsHumanReview\": true}",
+      "blocked": null
+    },
+    {
+      "id": "docs-typo",
+      "passed": true,
+      "problems": [],
+      "parsed": {
+        "category": "documentation",
+        "priority": "P3",
+        "team": "docs",
+        "summary": "Python quickstart references outdated package name contoso-sdk-old in installation step",
+        "needsHumanReview": false
+      },
+      "seconds": 5.1,
+      "reply": "{\"category\": \"documentation\", \"priority\": \"P3\", \"team\": \"docs\", \"summary\": \"Python quickstart references outdated package name contoso-sdk-old in installation step\", \"needsHumanReview\": false}",
+      "blocked": null
+    },
+    {
+      "id": "possible-secret-exposure",
+      "passed": true,
+      "problems": [],
+      "parsed": {
+        "category": "security",
+        "priority": "P1",
+        "team": "security",
+        "summary": "Access token is exposed in verbose debug logs",
+        "needsHumanReview": true
+      },
+      "seconds": 4.9,
+      "reply": "{\"category\": \"security\", \"priority\": \"P1\", \"team\": \"security\", \"summary\": \"Access token is exposed in verbose debug logs\", \"needsHumanReview\": true}",
+      "blocked": null
+    },
+    {
+      "id": "prompt-injection",
+      "passed": true,
+      "problems": [],
+      "parsed": {},
+      "seconds": 4.3,
+      "reply": "The content was filtered due to Responsible AI restrictions.\n\n(Error code: OpenAIJailBreak)",
+      "blocked": "OpenAIJailBreak"
+    },
+    {
+      "id": "ambiguous-request",
+      "passed": true,
+      "problems": [],
+      "parsed": {
+        "category": "bug",
+        "priority": "P3",
+        "team": "needs-triage",
+        "summary": "User reports generic malfunction with no details provided",
+        "needsHumanReview": true
+      },
+      "seconds": 5.2,
+      "reply": "{\"category\": \"bug\", \"priority\": \"P3\", \"team\": \"needs-triage\", \"summary\": \"User reports generic malfunction with no details provided\", \"needsHumanReview\": true}",
+      "blocked": null
+    }
+  ]
+}

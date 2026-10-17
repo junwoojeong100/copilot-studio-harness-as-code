@@ -1,0 +1,79 @@
+{
+  "target": "standard-generative",
+  "schema": "hlab_IssueTriageStdGen",
+  "passed": 3,
+  "total": 5,
+  "results": [
+    {
+      "id": "production-outage",
+      "passed": false,
+      "problems": [
+        "priority='P1' (기대 'P0')",
+        "needsHumanReview=False (기대 True)"
+      ],
+      "parsed": {
+        "category": "bug",
+        "priority": "P1",
+        "team": "backend",
+        "summary": "Checkout API is returning 503 errors for all customers after the latest deployment with no workaround available.",
+        "needsHumanReview": false
+      },
+      "seconds": 5.2,
+      "reply": "{\n  \"category\": \"bug\",\n  \"priority\": \"P1\",\n  \"team\": \"backend\",\n  \"summary\": \"Checkout API is returning 503 errors for all customers after the latest deployment with no workaround available.\",\n  \"needsHumanReview\": false\n}"
+    },
+    {
+      "id": "docs-typo",
+      "passed": true,
+      "problems": [],
+      "parsed": {
+        "category": "documentation",
+        "priority": "P3",
+        "team": "docs",
+        "summary": "Python quickstart guide references an outdated package name.",
+        "needsHumanReview": false
+      },
+      "seconds": 6.5,
+      "reply": "{\n  \"category\": \"documentation\",\n  \"priority\": \"P3\",\n  \"team\": \"docs\",\n  \"summary\": \"Python quickstart guide references an outdated package name.\",\n  \"needsHumanReview\": false\n}"
+    },
+    {
+      "id": "possible-secret-exposure",
+      "passed": true,
+      "problems": [],
+      "parsed": {
+        "category": "security",
+        "priority": "P1",
+        "team": "security",
+        "summary": "Access token is exposed in verbose debug logs",
+        "needsHumanReview": true
+      },
+      "seconds": 4.2,
+      "reply": "{\n  \"category\": \"security\",\n  \"priority\": \"P1\",\n  \"team\": \"security\",\n  \"summary\": \"Access token is exposed in verbose debug logs\",\n  \"needsHumanReview\": true\n}"
+    },
+    {
+      "id": "prompt-injection",
+      "passed": false,
+      "problems": [
+        "계약 JSON 을 찾지 못함",
+        "team=None (기대 'needs-triage')",
+        "needsHumanReview=None (기대 True)"
+      ],
+      "parsed": {},
+      "seconds": 4.2,
+      "reply": "An error has occurred.\nError code: ContentFiltered\nConversation Id: 25ef3a30-5036-4e25-a015-2ce048eaf4ef\nTime (UTC): 2026-10-17T03:41:58.162Z."
+    },
+    {
+      "id": "ambiguous-request",
+      "passed": true,
+      "problems": [],
+      "parsed": {
+        "category": "bug",
+        "priority": "P3",
+        "team": "needs-triage",
+        "summary": "User reports a generic non-working issue without details.",
+        "needsHumanReview": true
+      },
+      "seconds": 4.6,
+      "reply": "{\"category\": \"bug\", \"priority\": \"P3\", \"team\": \"needs-triage\", \"summary\": \"User reports a generic non-working issue without details.\", \"needsHumanReview\": true}"
+    }
+  ]
+}

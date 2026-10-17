@@ -1,0 +1,8 @@
+mcs.metadata:
+  componentName: Issue Triage MCP — Issue Triage MCP Server
+  description: MCP server for GitHub issue triage. Its classify_issue tool classifies an issue (title + body) into category, priority, team, summary and needsHumanReview; get_label_policy returns the label policy.
+kind: McpTool
+authMode: Maker
+connectionReference: hlab_IssueTriageMCP.cr.shared_new-5fissue-20triage-20mcp-5f5425e841e7aedf00.beff778c04334e68b1faa1384bf8ce89
+connectorId: /providers/Microsoft.PowerApps/apis/shared_new-5fissue-20triage-20mcp-5f5425e841e7aedf00
+operationId: InvokeServer

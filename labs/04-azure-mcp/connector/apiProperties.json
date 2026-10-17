@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "capabilities": [],
+    "connectionParameters": {
+      "api_key": {
+        "type": "securestring",
+        "uiDefinition": {
+          "constraints": {
+            "clearText": false,
+            "required": "true",
+            "tabIndex": 2
+          },
+          "description": "The x-api-key value of the Issue Triage MCP server (labs/04-azure-mcp/.env.local).",
+          "displayName": "API Key",
+          "tooltip": "Provide the x-api-key value"
+        }
+      }
+    },
+    "iconBrandColor": "#0F6CBD"
+  }
+}

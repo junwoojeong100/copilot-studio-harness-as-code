@@ -1,0 +1,17 @@
+# secrets / local state
+.env.local
+.env
+
+# local python env & caches
+.venv/
+__pycache__/
+*.pyc
+
+# build-time copies of shared files (copied by scripts/deploy.sh, single source of truth is ../../shared)
+server/classify_issue.py
+server/label-policy.yaml
+
+# local logs / scratch
+.run/
+*.log
+.env.local.*

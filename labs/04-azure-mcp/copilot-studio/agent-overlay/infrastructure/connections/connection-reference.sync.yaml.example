@@ -1,0 +1,6 @@
+# 첫 push 전에는 이 파일을 워크스페이스에 넣지 마세요 (EVIDENCE.md §4: ExportKeyInvalidCreate).
+# Dataverse 에 연결 참조 행을 먼저 만들고 도구 YAML 로 push 하면, 다음 `pac copilot pull` 이
+# infrastructure/connections/<logicalName>.sync.yaml 로 아래 내용을 직접 써 줍니다. (파일명 = logicalName + .sync.yaml)
+connectionReferences:
+  - connectionReferenceLogicalName: __CONNECTION_REFERENCE__
+    connectorId: /providers/Microsoft.PowerApps/apis/__CONNECTOR_NAME__

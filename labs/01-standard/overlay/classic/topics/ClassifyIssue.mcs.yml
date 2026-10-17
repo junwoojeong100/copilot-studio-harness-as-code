@@ -1,0 +1,107 @@
+mcs.metadata:
+  componentName: Classify Issue
+  description: Classifies a GitHub issue with deterministic Power Fx rules (no generative AI).
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Classify Issue
+    includeInOnSelectIntent: false
+    triggerQueries:
+      - classify an issue
+      - classify github issue
+      - triage an issue
+      - issue triage
+      - prioritize an issue
+
+  actions:
+    - kind: Question
+      id: question_title
+      alwaysPrompt: true
+      variable: init:Topic.IssueTitle
+      prompt: What is the GitHub issue title?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: question_body
+      alwaysPrompt: true
+      variable: init:Topic.IssueBody
+      prompt: What is the GitHub issue body?
+      entity: StringPrebuiltEntity
+
+    - kind: SetVariable
+      id: set_text
+      variable: init:Topic.Text
+      value: =Lower(Topic.IssueTitle & " " & Topic.IssueBody)
+
+    - kind: SetVariable
+      id: set_inj
+      variable: init:Topic.IsInjection
+      value: =IsMatch(Topic.Text, "ignore (your|all|previous)|system instruction|reveal (all )?secret|treat this text as|disregard (the|your)|close every", MatchOptions.Contains)
+
+    - kind: SetVariable
+      id: set_sec
+      variable: init:Topic.IsSecurity
+      value: =IsMatch(Topic.Text, "vulnerab|secret|token|\bcve\b|credential|password|api key|leak|exploit", MatchOptions.Contains)
+
+    - kind: SetVariable
+      id: set_doc
+      variable: init:Topic.IsDocs
+      value: =IsMatch(Topic.Text, "documentation|\bdocs?\b|typo|quickstart|tutorial|\bguide\b|readme|package name", MatchOptions.Contains)
+
+    - kind: SetVariable
+      id: set_category
+      variable: init:Topic.Category
+      value: |-
+        =If(Topic.IsInjection || Topic.IsSecurity, "security",
+           Topic.IsDocs, "documentation",
+           IsMatch(Topic.Text, "feature request|please add|add support|enhancement|would like|support for", MatchOptions.Contains), "feature",
+           IsMatch(Topic.Text, "how do i|how to|is it possible|\?", MatchOptions.Contains), "question",
+           IsMatch(Topic.Text, "error|fail|crash|exception|broken|\b50[0-9]\b|timeout|regression|not work|doesn't work", MatchOptions.Contains), "bug",
+           "question")
+
+    - kind: SetVariable
+      id: set_team
+      variable: init:Topic.Team
+      value: |-
+        =If(Topic.IsInjection, "needs-triage",
+           Topic.IsSecurity, "security",
+           Topic.IsDocs, "docs",
+           IsMatch(Topic.Text, "\bapi\b|service|database|latency|server|\b50[0-9]\b", MatchOptions.Contains), "backend",
+           IsMatch(Topic.Text, "\bui\b|\bux\b|browser|react|\bcss\b|accessibility|button", MatchOptions.Contains), "frontend",
+           IsMatch(Topic.Text, "analytics|pipeline|\bmodel\b|schema|warehouse", MatchOptions.Contains), "data",
+           IsMatch(Topic.Text, "infrastructure|deployment|\bci\b|\bbuild\b|\bauth\b|permission", MatchOptions.Contains), "platform",
+           "needs-triage")
+
+    - kind: SetVariable
+      id: set_priority
+      variable: init:Topic.Priority
+      value: |-
+        =If(Topic.Team = "needs-triage", "P3",
+           Topic.IsSecurity, "P1",
+           IsMatch(Topic.Text, "\b503\b|outage|all customers|data loss|site down|production down", MatchOptions.Contains), "P0",
+           Topic.Category = "bug", "P2",
+           "P3")
+
+    - kind: SetVariable
+      id: set_review
+      variable: init:Topic.NeedsHumanReview
+      value: =Topic.Category = "security" || Topic.Priority = "P0" || Topic.Team = "needs-triage"
+
+    - kind: SetVariable
+      id: set_summary
+      variable: init:Topic.Summary
+      value: =Topic.Category & " for " & Topic.Team & ": " & Left(Trim(Topic.IssueTitle), 80)
+
+    - kind: SetVariable
+      id: set_json
+      variable: init:Topic.ResultJson
+      value: =JSON({category: Topic.Category, priority: Topic.Priority, team: Topic.Team, summary: Topic.Summary, needsHumanReview: Topic.NeedsHumanReview})
+
+    - kind: SendActivity
+      id: send_result
+      activity: "{Topic.ResultJson}"
+
+    - kind: CancelAllDialogs
+      id: cancelAll

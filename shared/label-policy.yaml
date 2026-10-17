@@ -1,0 +1,67 @@
+version: 1
+
+types:
+  bug:
+    label: type:bug
+    description: Existing behavior is broken or produces an error.
+  feature:
+    label: type:feature
+    description: A request for new or expanded behavior.
+  documentation:
+    label: type:docs
+    description: Documentation is missing, incorrect, or unclear.
+  question:
+    label: type:question
+    description: The reporter primarily needs guidance or clarification.
+  security:
+    label: type:security
+    description: Potential vulnerability, credential exposure, or abuse path.
+
+priorities:
+  P0:
+    label: priority:P0
+    rule: Active security incident, broad outage, or confirmed data loss.
+    approvalRequired: true
+  P1:
+    label: priority:P1
+    rule: Severe regression with no practical workaround.
+    approvalRequired: false
+  P2:
+    label: priority:P2
+    rule: Material impact with a workaround or limited scope.
+    approvalRequired: false
+  P3:
+    label: priority:P3
+    rule: Minor issue, enhancement, question, or documentation request.
+    approvalRequired: false
+
+teams:
+  platform:
+    label: team:platform
+    signals: [infrastructure, deployment, ci, build, auth, permissions]
+  frontend:
+    label: team:frontend
+    signals: [ui, ux, browser, react, css, accessibility]
+  backend:
+    label: team:backend
+    signals: [api, service, database, latency, server]
+  data:
+    label: team:data
+    signals: [analytics, pipeline, model, schema, warehouse]
+  docs:
+    label: team:docs
+    signals: [documentation, guide, tutorial, example]
+  security:
+    label: team:security
+    signals: [vulnerability, secret, token, exploit, cve]
+  needs-triage:
+    label: needs-triage
+    signals: [low-confidence, insufficient-context, conflicting-signals]
+
+guardrails:
+  minimumConfidence: 0.75
+  neverCloseIssue: true
+  neverDeleteContent: true
+  requireApprovalFor: [security, P0]
+  untrustedContentFields: [issueTitle, issueBody, issueComments]
+

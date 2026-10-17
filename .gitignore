@@ -1,0 +1,15 @@
+# 비밀·로컬 상태
+lab.env
+.env.local
+.venv/
+.cache/
+workspaces/
+build/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+# Copilot chat 앱 ID 는 테넌트별로 생성
+labs/03-copilot-chat/.app-id
+labs/03-copilot-chat/build/
+.run/
